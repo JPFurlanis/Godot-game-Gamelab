@@ -1,15 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxbhuk4okfcah"]
+[gd_scene load_steps=7 format=3 uid="uid://cxbhuk4okfcah"]
 
+[ext_resource type="Script" path="res://kombi.gd" id="1_8mfdk"]
 [ext_resource type="Texture2D" uid="uid://cq86w3p641umy" path="res://Layer 1.png" id="1_s0mnp"]
+[ext_resource type="Script" path="res://fundo.gd" id="1_wb1lu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii0s3"]
 size = Vector2(363, 176)
 
-[node name="Kombi" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjec2"]
+size = Vector2(1455, 52)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sopx0"]
+load_path = "res://.godot/imported/desktop-wallpaper-concert-crowd-from-stage-background-becuo-for-your-mobile-tablet-explore-concert-stage-rock-concert-music-concert-concert.jpg-20e2a19b69c4caa1ed2625dc2a833d63.ctex"
+
+[node name="Game" type="Node2D"]
+
+[node name="Kombi" type="CharacterBody2D" parent="."]
+position = Vector2(190, 495)
+disable_mode = 2
+script = ExtResource("1_8mfdk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kombi"]
+position = Vector2(1, 0)
 texture = ExtResource("1_s0mnp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-position = Vector2(0.5, 0)
+[node name="Area2D" type="Area2D" parent="Kombi"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kombi/Area2D"]
+position = Vector2(4, 2)
 shape = SubResource("RectangleShape2D_ii0s3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kombi"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_ii0s3")
+
+[node name="Chao" type="Area2D" parent="."]
+position = Vector2(378, 649)
+
+[node name="ground" type="Sprite2D" parent="Chao"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(221, -10)
+shape = SubResource("RectangleShape2D_hjec2")
+
+[node name="fundo" type="Sprite2D" parent="."]
+position = Vector2(576.25, 323)
+scale = Vector2(1.35706, 1.22433)
+texture = SubResource("CompressedTexture2D_sopx0")
+script = ExtResource("1_wb1lu")
+
+[connection signal="area_entered" from="Kombi/Area2D" to="Kombi" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Kombi/Area2D" to="Kombi" method="_on_area_2d_area_exited"]
