@@ -4,7 +4,7 @@ extends CharacterBody2D
 # Configurações
 var gravity := 800
 var jump_force := -500
-var speed := 200
+var speed := 800
 
 func _physics_process(delta):
 	# Aplicar gravidade
