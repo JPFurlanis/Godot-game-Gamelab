@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjerex1tjfods"]
+
+[ext_resource type="Script" path="res://fanScript.gd" id="1_40kl5"]
+[ext_resource type="Texture2D" uid="uid://nho5wlck54d3" path="res://obstaculo.png" id="1_gbvjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drtqo"]
+size = Vector2(255, 300)
+
+[node name="Fan" type="Area2D" groups=["Fanclube"]]
+script = ExtResource("1_40kl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_gbvjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500001, -1.90735e-06)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_drtqo")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbh5uwy4o7v0k"]
+
+[ext_resource type="Script" path="res://Ui.gd" id="1_gewut"]
+[ext_resource type="Texture2D" uid="uid://bmau2rit2atti" path="res://RestartButton.png" id="2_uwpb8"]
+
+[node name="tela" type="CanvasLayer"]
+script = ExtResource("1_gewut")
+
+[node name="RestartBTN" type="TextureButton" parent="."]
+visible = false
+offset_left = 526.0
+offset_top = 278.0
+offset_right = 633.0
+offset_bottom = 368.0
+texture_normal = ExtResource("2_uwpb8")
+texture_pressed = ExtResource("2_uwpb8")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 524.0
+offset_top = 420.0
+offset_right = 626.0
+offset_bottom = 492.0
+text = "MENU"
+
+[connection signal="pressed" from="RestartBTN" to="." method="_on_restart_btn_pressed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

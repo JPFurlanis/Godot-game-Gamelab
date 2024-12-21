@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xbykt58fbr46"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sopx0"]
-load_path = "res://.godot/imported/desktop-wallpaper-concert-crowd-from-stage-background-becuo-for-your-mobile-tablet-explore-concert-stage-rock-concert-music-concert-concert.jpg-20e2a19b69c4caa1ed2625dc2a833d63.ctex"
+[ext_resource type="Texture2D" uid="uid://bnvkicao3bk04" path="res://fundo.jpg" id="1_n4oj3"]
 
 [node name="Parallax2D" type="ParallaxBackground"]
 
@@ -11,6 +10,6 @@ motion_mirroring = Vector2(1152, 0)
 [node name="fundo" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(576.25, 323)
 scale = Vector2(1.35706, 1.22433)
-texture = SubResource("CompressedTexture2D_sopx0")
+texture = ExtResource("1_n4oj3")
 centered = false
 offset = Vector2(-420, 2.5)

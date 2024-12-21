@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba0ni3cmva1bs"]
+
+[ext_resource type="Script" path="res://UI2.gd" id="1_1tkeg"]
+[ext_resource type="Texture2D" uid="uid://bnvkicao3bk04" path="res://fundo.jpg" id="2_qhi8u"]
+[ext_resource type="Texture2D" uid="uid://byd0plcd3psik" path="res://Asset 1.png" id="3_ihh5r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1tkeg")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(575, 324.5)
+scale = Vector2(1.36235, 1.23384)
+texture = ExtResource("2_qhi8u")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 356.0
+offset_right = 643.0
+offset_bottom = 463.0
+text = "PLAY"
+
+[node name="Asset1" type="Sprite2D" parent="."]
+position = Vector2(589, 203)
+scale = Vector2(1.42537, 1.42537)
+texture = ExtResource("3_ihh5r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 540.0
+offset_right = 831.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 26
+text = "FEITO POR JOÃO PEDRO FURLAN"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

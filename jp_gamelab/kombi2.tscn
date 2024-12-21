@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq86w3p641umy" path="res://Layer 1.png" id="2_ulx2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii0s3"]
-size = Vector2(363, 176)
+size = Vector2(218, 106)
 
 [node name="Kombi" type="CharacterBody2D"]
 position = Vector2(572, 331)
@@ -13,16 +13,17 @@ script = ExtResource("1_2vreg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ulx2s")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, 2)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ii0s3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 2)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ii0s3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
